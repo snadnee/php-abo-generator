@@ -1,0 +1,23 @@
+{
+    "name": "snadnee/abo-generator",
+    "description": "Generating of ABO files for mass payment orders",
+    "type": "library",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Snadnee\\ABOGenerator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ondrej Ehrlich",
+            "email": "ehrlich@snadnee.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0|^8.1",
+        "laravel/framework": "^8.0|^9.0",
+        "illuminate/support": "^8.0|^9.0"
+    }
+}
