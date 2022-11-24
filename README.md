@@ -9,6 +9,7 @@ Basic usage of this package is simple. Here is an example.
 
 ```php
 use Snadnee\ABOGenerator\ABOGenerator;
+use Carbon\Carbon;
 
 $senderParams = [
     'bankAccount' => '11-123456789/0600',
@@ -17,7 +18,7 @@ $senderParams = [
 
 $paymentGroups = [
     'group1' => [
-        'dueDate' => now(),
+        'dueDate' => Carbon::now(),
         'payments' => [
             [
                 'amount' => 1.5,
@@ -54,6 +55,7 @@ Each payment has an amount, a variable, specific, constant symbol, a message and
 
 ```php
 use Snadnee\ABOGenerator\ABOGenerator;
+use Carbon\Carbon;
 
 $ABOGenerator = new ABOGenerator('Company name');
 
@@ -62,7 +64,7 @@ $file->setSenderBank(0600);
 
 $group = $file->addGroup();
 $group->setSenderAccount(1234567890)
-    ->setDate(now());
+    ->setDate(Carbon::now());
 
 // AccountNumber, amount, variable symbol
 $group->addPayment("111-987654321/0300", 14323.43, 2220009813)

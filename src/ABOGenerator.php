@@ -68,7 +68,7 @@ class ABOGenerator
     public function setDate(?string $date = null): self
     {
         if ($date == null) {
-            $date = now()->format('dmy');
+            $date = Carbon::now()->format('dmy');
         }
 
         $this->date = $date;
