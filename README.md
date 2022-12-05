@@ -4,6 +4,10 @@ This package can be used for generating ABO files which can be used for importin
 
 ## Instalation
 
+```sh
+composer require snadnee/php-abo-generator
+```
+
 ## Basic usage
 Basic usage of this package is simple. Here is an example.
 
