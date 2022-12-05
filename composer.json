@@ -1,5 +1,5 @@
 {
-    "name": "snadnee/abo-generator",
+    "name": "snadnee/php-abo-generator",
     "description": "Generating of ABO files for mass payment orders",
     "type": "library",
     "license": "proprietary",
