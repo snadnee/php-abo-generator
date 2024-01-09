@@ -7,7 +7,7 @@ use Snadnee\ABOGenerator\Services\ABOService;
 
 class Payment
 {
-    private float $amount;
+    private int $amount;
     private ?string $variableSymbol = '';
     private string $bankCode;
     private string $accountNumber;
@@ -38,7 +38,7 @@ class Payment
     public function setAmount(float $amount, bool $inCents = false): self
     {
         $amount = $inCents ? $amount : $amount * 100;
-        $this->amount = $amount;
+        $this->amount = round($amount, 0);
 
         return $this;
     }
