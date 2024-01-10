@@ -160,7 +160,7 @@ class Payment
             )
             ->append(($this->specificSymbol ?: ' ') . ' ')
             ->append(($this->message ? mb_substr('AV:' . Str::transliterate($this->message), 0, 38) : ' '))
-            ->append(($this->payeeName ? '  ' . mb_substr('NP:' . Str::transliterate($this->payeeName), 0, 35) : ''))
+            ->append(($this->payeeName ? ' ' . mb_substr('NP:' . Str::transliterate($this->payeeName), 0, 35) : ''))
             ->append("\r\n");
 
         return (string) $result;
