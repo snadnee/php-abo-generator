@@ -163,6 +163,7 @@ class ABOGenerator
                 $group->addPayment($payment['bankAccount'], $payment['amount'], $payment['variableSymbol'] ?? null)
                     ->setConstantSymbol($payment['constantSymbol'] ?? null)
                     ->setSpecificSymbol($payment['specificSymbol'] ?? null)
+                    ->setPayeeName($payment['payeeName'] ?? null)
                     ->setMessage($payment['message'] ?? null);
             }
         }
