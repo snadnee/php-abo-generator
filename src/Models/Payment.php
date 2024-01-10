@@ -15,6 +15,7 @@ class Payment
     private ?string $specificSymbol = null;
     private ?string $constantSymbol = null;
     private string $message = '';
+    private ?string $payeeName = null;
 
     public function __construct(string $fullAccountNumber, float $amount, string $variableSymbol = '')
     {
@@ -130,6 +131,13 @@ class Payment
         return $this;
     }
 
+    public function setPayeeName(?string $payeeName): self
+    {
+        $this->payeeName = $payeeName;
+
+        return $this;
+    }
+
     /**
      * Generate payment as a string.
      *
@@ -142,16 +150,17 @@ class Payment
         $result = $result
             ->append(
                 sprintf(
-                '%s %.0f %s %s%04d ',
-                ABOService::composeAccountNumber($this->accountNumber, $this->accountPrefix),
-                $this->amount,
-                $this->variableSymbol,
-                $this->bankCode,
-                $this->constantSymbol
-            )
+                    '%s %.0f %s %s%04d ',
+                    ABOService::composeAccountNumber($this->accountNumber, $this->accountPrefix),
+                    $this->amount,
+                    $this->variableSymbol,
+                    $this->bankCode,
+                    $this->constantSymbol
+                )
             )
             ->append(($this->specificSymbol ?: ' ') . ' ')
-            ->append(($this->message ? mb_substr('AV:' . $this->message, 0, 38) : ' '))
+            ->append(($this->message ? mb_substr('AV:' . Str::transliterate($this->message), 0, 38) : ' '))
+            ->append(($this->payeeName ? '  ' . mb_substr('NP:' . Str::transliterate($this->payeeName), 0, 35) : ''))
             ->append("\r\n");
 
         return (string) $result;
