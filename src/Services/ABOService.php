@@ -15,7 +15,7 @@ class ABOService
      * @param string|null $bankCode
      * @return string
      */
-    public static function composeAccountNumber(string $number, string $prefix = null, string $bankCode = null): string
+    public static function composeAccountNumber(string $number, ?string $prefix = null, ?string $bankCode = null): string
     {
         $result = Str::of('');
 
