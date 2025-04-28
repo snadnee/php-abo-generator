@@ -1,6 +1,15 @@
 # PHP ABO files generator
 
-This package can be used for generating ABO files which can be used for importing into internet banking. 
+PHP ABO Generator is a lightweight PHP library for generating ABO files — a format commonly used by Czech banks for bulk payment processing.
+
+This package provides a simple and structured way to create ABO files without any external dependencies.
+
+Features
+Create valid ABO files in pure PHP
+
+Easy-to-use object-oriented API
+
+Supports setting all key payment details.
 
 ## Instalation
 
