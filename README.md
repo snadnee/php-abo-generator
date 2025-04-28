@@ -18,7 +18,7 @@ composer require snadnee/php-abo-generator
 ```
 
 ## Basic usage
-Basic usage of this package is simple. Here is an example.
+The basic usage of this package is simple. Here is an example.
 
 ```php
 use Snadnee\ABOGenerator\ABOGenerator;
