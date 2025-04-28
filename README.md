@@ -4,12 +4,12 @@ PHP ABO Generator is a lightweight PHP library for generating ABO files — a fo
 
 This package provides a simple and structured way to create ABO files without any external dependencies.
 
-Features
-Create valid ABO files in pure PHP
+## Features
+- Create valid ABO files in pure PHP
 
-Easy-to-use object-oriented API
+- Easy-to-use object-oriented API
 
-Supports setting all key payment details.
+- Supports setting all key payment details.
 
 ## Instalation
 
