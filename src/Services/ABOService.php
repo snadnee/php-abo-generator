@@ -4,6 +4,7 @@ namespace Snadnee\ABOGenerator\Services;
 
 use Illuminate\Support\Str;
 use JetBrains\PhpStorm\ArrayShape;
+use Snadnee\ABOGenerator\Exceptions\InvalidBankAccountException;
 
 class ABOService
 {
@@ -47,6 +48,10 @@ class ABOService
         ];
 
         $accountNumber = explode('/', $accountNumber);
+        if (!isset($accountNumber[0]) || !isset($accountNumber[1])) {
+            throw new InvalidBankAccountException();
+        }
+
         $parsed['bankCode'] = $accountNumber[1];
 
         if (Str::contains($accountNumber[0], '-')) {
